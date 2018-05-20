@@ -1,0 +1,25 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.label{
+	-fx-font-family: "Abel", Times, serif;
+	-fx-font-size: 11pt;
+}
+
+.button{
+	-fx-font-family: "Abel", Times, serif;
+	-fx-font-size: 11pt;
+	-fx-background-color: #D3D3D3;
+	-fx-border-radius: 8px;
+	-fx-transition-duartion: 0.5s;
+}
+
+.button:hover{
+	-fx-background-color: linear-gradient(#D3D3D3,#696969);
+}
+
+.root{
+	-fx-background-color: #ffffcc;
+	-fx-border-color: black;
+	-fx-border-style: solid;
+	-fx-border-width: 4pt;
+}

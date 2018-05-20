@@ -23,18 +23,18 @@ public class Retirement {
 	}
 
 	public double MonthlySavings() {
-
-		//TODO: Calculate AmountToSave
-		double pmt = 0; // <-- this should be fixed to calculate the real pmt
-		return pmt;
+		double pmt = 0;
+		pmt = PMT(this.getdAnnualReturnWorking() / 12.0, this.getiYearsToWork() * 12.0, 0.0, this.TotalAmountToSave(), false);
+		pmt = Math.round(pmt * 100.0) / 100.0;
+		return -pmt;
 	}
 
 	public double TotalAmountToSave() {
-		
-		//TODO: Calculate the Total Amount Requried to save
 		double pv = 0;
+		pv = PV(this.getdAnnualReturnRetired() / 12.0, this.getiYearsRetired() * 12.0, this.getdRequiredIncome() - this.getdMonthlySSI(), 0, false); 
+		pv = Math.round(pv * 100.0) / 100.0;
 		//	Hint: Here's how to round a number: pv = Math.round(pv * 100.0) / 100.0;
-		return pv;
+		return -pv;
 	}
 
 	public static double PMT(double r, double n, double p, double f, boolean t) {
@@ -52,6 +52,7 @@ public class Retirement {
 		//	y = PMT amount
 		//	f = Future value
 		//	t = boolean... when interest is calculated... we're going to use FALSE
+		
 		return FinanceLib.pv(r, n, y, f, t);
 	}
 
