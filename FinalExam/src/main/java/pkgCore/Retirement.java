@@ -26,7 +26,7 @@ public class Retirement {
 		double pmt = 0;
 		pmt = PMT(this.getdAnnualReturnWorking() / 12.0, this.getiYearsToWork() * 12.0, 0.0, this.TotalAmountToSave(), false);
 		pmt = Math.round(pmt * 100.0) / 100.0;
-		return -pmt;
+		return Math.abs(pmt);
 	}
 
 	public double TotalAmountToSave() {
@@ -34,7 +34,7 @@ public class Retirement {
 		pv = PV(this.getdAnnualReturnRetired() / 12.0, this.getiYearsRetired() * 12.0, this.getdRequiredIncome() - this.getdMonthlySSI(), 0, false); 
 		pv = Math.round(pv * 100.0) / 100.0;
 		//	Hint: Here's how to round a number: pv = Math.round(pv * 100.0) / 100.0;
-		return -pv;
+		return Math.abs(pv);
 	}
 
 	public static double PMT(double r, double n, double p, double f, boolean t) {
